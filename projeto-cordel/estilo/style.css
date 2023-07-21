@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/*fontes abaixo importadas do fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Sriracha&display=swap');
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+/*em primeiro ligar vamos criar algumas configurações gerais para resetar nossos elementos*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+}
+
+html, body {
+    /*importante definir o tamanho minimo como 100% do view port height (altura do vp)*/
+    min-height: 100vh;
+    background-color: darkgray;
+    font-family: var(--fonte1);
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+
+}
+
+header > h1 {
+    padding-top: 50px;
+    /*agora uma tecnica para jogar todas as letras para maiúsculas
+    text-transform: uppercase;*/
+    /*vamos usar a configuração abaixo pois o efeito visual é mais elegante. Mesmo mantendo todas maiúsculas, este 'font-variant: small-caps;' tende a aumentar o tamanho das letras iniciais de cada palavra*/
+    font-variant: small-caps;
+    font-family: var(--fonte2);
+    font-size: 10vw; /*(10% do vw -> viewport width)este é um recurso para deixar o titulo 'responsivo' sem utilizar @mediaqueries ainda*/
+    
+}
+
+header > p {
+    /*vamos manter esse padding-bottom com a mesma proporção do padding-top usado no h1, assim ficaremos com um cabeçario simétrico tanto pra cima quanto pra baixo*/
+    padding-bottom: 50px;
+
+}
+
+header a, footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+
+}
+
+header a:hover, footer a:hover {
+    text-decoration: underline;
+
+}
+
+section {
+    /*para termos o efeito paralaxe, vamos plicar estas configurações em ambas as sections ( normal, imagem) */
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 3.5vw;/*(3.5% do vw -> viewport width) este é um recurso para deixar o paragrafo 'responsivo' sem utilizar @mediaqueries ainda*/
+
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section.imagem {
+    background-color: rgb(52, 51, 51);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.5);
+    /*este box shadow inset faz com que o espaçamento da sombra aconteca para dentro do box. Como se fosse uma sopreposição 3d... uma colagem de papel.*/
+    background-attachment: fixed; /*responsavel pelo efeito paralaxe, para entender a diferenca basta comentar este codigo para  ver como fica sem ele */
+
+}
+
+section.imagem > p {
+    background-color: rgba(0, 0, 0, 0.486);
+    display: inline-block; /*ao usar o 'inline-block', ajustamos o tamanho da caixa ao tamanho do conteudo*/
+    padding: 5px;
+    text-shadow: 1px 1px 0px black;
+}
+
+section#img01 {
+    background-image: url(../imagens/background001.jpg);
+    background-position: right center;
+    background-size: cover; /*usamos este size pq a imagem era muito grande e ficava ruim... com este 'cover' a imagem se adapta melhor*/
+
+}
+
+section#img02 {
+    background-image: url(../imagens/background002.jpg);
+    background-position: right center;
+    background-size: cover;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}

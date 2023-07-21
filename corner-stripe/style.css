@@ -1,0 +1,28 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.selo {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:400px;
+    height:80px;
+    background-color: #3f7dc3;
+    transform: rotate(-45deg) translate(-90px, -30px);
+    box-shadow: 0 0 10px #555;
+
+}
+
+.selo a {
+    text-decoration:none;
+    color:#FFF;
+    width:400px;
+    text-align:center;
+    font-size: 25px;
+    border-top:1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding:21px;
+}

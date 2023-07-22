@@ -1,0 +1,216 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size:13px;
+    overflow-x: hidden; /*aqui diz que só havera barra de rolagem vertical, pois tudo que passar do eixo horizontal será ignorado*/
+    width: 100vw;
+}
+
+header {
+    height:100px;
+    background-color:#000;
+    color:#FFF;
+
+}
+
+.header {
+    max-width:1140px;
+    height: 100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    
+}
+
+.logo {
+    width:100px;
+    
+}
+
+.logoimg {
+    width:80px;
+    height:80px;
+    background-color: #b28756;
+    border-radius: 40px;
+}
+
+.menu{
+    flex:1; /*aqui definimos o flex 1 para que ele ocupe o restante total do espaço que sobra da .logo com 100px fixa*/
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+.menu ul,
+.menu li {
+    list-style:none;
+
+}
+
+.menu ul {
+    display:flex;
+}
+
+.menu li a {
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration:none;
+    display: flex; /*aqui deixamos display flex porque teremos que ajustar a altura (display que aceita altura é o flex e o block) dele para inserir a borda 'animada' abaixo do menu ativo*/
+    align-items: center;
+    border-bottom: 5px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    height:100px;
+}
+
+.menu li a:hover,
+.menu .active a {
+    border-bottom:5px solid #b28756; /*para o texto nao pular deixamos uma borda por padrão igual a do hover porem com a mesma cor do fundo no elemento a */
+    color: #CCC;
+}
+
+.banner {
+    height:calc(100vh - 100px);
+    background-color: #333;
+    background-image: url('../images/bg.jpg');
+    background-size: cover; /*cover: ajuste o tamanho de forma que a img preencha todo o espaço*/
+    background-position: bottom;
+    overflow:hidden; /*tudo que passar do espaço disponivel fica escondido*/
+}
+
+.banner .sliders {
+    height:100%;
+    width:1000vw; /*espaço para suportar ate 10 slides*/
+}
+
+.banner .slide {
+    width:100vw;
+    height:100%;
+    display:inline-block; /*para ficar um slide ao lado do outro*/
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.banner .slidearea {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    align-items: center;
+    justify-content:center;
+    color: #fff;
+}
+
+.banner h1 {
+    text-transform:uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.banner h1 span {
+    color: #b28756;
+    
+}
+
+.banner h2 {
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.banner a {
+    display: block; /*pois vamos precisar mexer em padding e coisas relacionadas*/
+    background-color: #b28756;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top:30px;
+    border-radius: 20px;
+
+}
+
+.banner .sliders-pointers {
+    width:100vw;
+    height: 20px;
+    position: absolute; /*para ele ficar aparente independente da area */
+    margin-top: -50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.banner .pointer {
+    width: 15px;
+    height:15px;
+    border: 2px solid #b28756;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right:5px;
+    cursor:pointer;
+}
+
+.banner .pointer.active {
+    background-color: #b28756;
+}
+
+
+
+.default {
+    padding-top: 50px;
+    padding-bottom:50px;
+}
+
+.default .section-title,
+.default .section-desc {
+    text-align:center;
+    text-transform: uppercase;
+    font-weight:600;
+}
+
+.default .section-title {
+    font-size: 20px;
+    
+
+}
+
+.default .section-desc {
+    font-size:12px;
+    color: #CCC;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    
+}
+
+.default .section-body {
+    max-width:1140px;
+    margin: auto;
+    min-height:100px;
+    background-color:#CCCCCC;
+}
+
+.default.light {
+    background-color:#f7f7f7;
+
+}
+
+.default.light .section-title {
+    color: #000;
+}
+
+.default.dark {
+    background-color:#000;
+
+}
+
+.default.dark .section-title {
+    color: #fff;
+}
